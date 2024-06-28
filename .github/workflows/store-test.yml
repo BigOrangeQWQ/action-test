@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: nonebot/noneflow
+          repository: bigorangeqwq/noneflow
           fetch-depth: 0
 
       - name: Install poetry
