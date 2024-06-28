@@ -102,7 +102,7 @@ jobs:
           path: .cache/.pre-commit
           key: noneflow-pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
       - name: NoneBot2 Publish Bot
-        uses: docker://ghcr.io/nonebot/noneflow:main
+        uses: docker://ghcr.io/bigorangeqwq/noneflow:main
         with:
           config: >
             {
