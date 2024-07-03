@@ -70,7 +70,7 @@ jobs:
         id: plugin-test
         run: |
           curl -sSL https://raw.githubusercontent.com/nonebot/nonebot2-publish-bot/main/src/utils/plugin_test.py -o plugin_test.py
-          docker build -t noneflow/test
+          docker build -t noneflow/test .
           python plugin_test.py
   publish_bot:
     runs-on: ubuntu-latest
