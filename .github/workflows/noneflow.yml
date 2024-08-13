@@ -119,5 +119,7 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           PRIVATE_KEY: ${{ secrets.APP_KEY }}
           PRE_COMMIT_HOME: /github/workspace/.cache/.pre-commit
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
       - name: Change permission
         run: sudo chown -R $(whoami):$(id -ng) .cache/.pre-commit
