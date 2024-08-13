@@ -104,35 +104,36 @@ jobs:
       - name: NoneBot2 Publish Bot
         # uses: docker://ghcr.io/bigorangeqwq/noneflow:main
         run: |
-          docker run --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            -v ${{ github.workspace }}:/workspace \
-            -e APP_ID=${{ secrets.APP_ID }} \
-            -e PRIVATE_KEY=${{ secrets.APP_KEY }} \
-            -e PRE_COMMIT_HOME=/workspace/.cache/.pre-commit \
-            -e CONFIG='{
-              "base": "main",
-              "plugin_path": "nonebot/plugins.json",
-              "bot_path": "nonebot/bots.json",
-              "adapter_path": "nonebot/adapters.json",
-              "registry_repository": "bigorangeqwq/action-test"
+          docker run \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e APP_ID=${{ secrets.APP_ID }} \
+          -e PRIVATE_KEY=${{ secrets.APP_KEY }} \
+          -e PRE_COMMIT_HOME=/github/workspace/.cache/.pre-commit \
+          -e CONFIG='{ \
+              "base": "main", \
+              "plugin_path": "nonebot/plugins.json", \
+              "bot_path": "nonebot/bots.json", \
+              "adapter_path": "nonebot/adapters.json", \
+              "registry_repository": "bigorangeqwq/action-test" \
             }' \
-            ghcr.io/bigorangeqwq/noneflow:main
+          ghcr.io/bigorangeqwq/noneflow:main
         # with:
-        #   config: >
-        #     {
-        #       "base": "main",
-        #       "plugin_path": "nonebot/plugins.json",
-        #       "bot_path": "nonebot/bots.json",
-        #       "adapter_path": "nonebot/adapters.json",
-        #       "registry_repository": "bigorangeqwq/action-test"
-        #     }
+          # config: >
+          #   {
+          #     "base": "main",
+          #     "plugin_path": "nonebot/plugins.json",
+          #     "bot_path": "nonebot/bots.json",
+          #     "adapter_path": "nonebot/adapters.json",
+          #     "registry_repository": "bigorangeqwq/action-test"
+          #   }
         # env:
-        #   # PLUGIN_TEST_RESULT: ${{ needs.plugin_test.outputs.result }}
-        #   # PLUGIN_TEST_OUTPUT: ${{ needs.plugin_test.outputs.output }}
-        #   # PLUGIN_TEST_METADATA: ${{ needs.plugin_test.outputs.metadata }}
-        #   APP_ID: ${{ secrets.APP_ID }}
-        #   PRIVATE_KEY: ${{ secrets.APP_KEY }}
-        #   PRE_COMMIT_HOME: /github/workspace/.cache/.pre-commit
+          # PLUGIN_TEST_RESULT: ${{ needs.plugin_test.outputs.result }}
+          # PLUGIN_TEST_OUTPUT: ${{ needs.plugin_test.outputs.output }}
+          # PLUGIN_TEST_METADATA: ${{ needs.plugin_test.outputs.metadata }}
+          # APP_ID: ${{ secrets.APP_ID }}
+          # PRIVATE_KEY: ${{ secrets.APP_KEY }}
+          # PRE_COMMIT_HOME: /github/workspace/.cache/.pre-commit
+        # volumes:
+        #   - /var/run/docker.sock:/var/run/docker.sock
       - name: Change permission
         run: sudo chown -R $(whoami):$(id -ng) .cache/.pre-commit
