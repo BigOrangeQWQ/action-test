@@ -105,19 +105,18 @@ jobs:
         # uses: docker://ghcr.io/bigorangeqwq/noneflow:main
         run: |
           curl -sSL https://github.com/BigOrangeQWQ/noneflow/blob/main/docker-compose.yml -o docker-compose.yml
-          docker compose up
+          docker compose up 
         env:
           # PLUGIN_TEST_RESULT: ${{ needs.plugin_test.outputs.result }}
           # PLUGIN_TEST_OUTPUT: ${{ needs.plugin_test.outputs.output }}
           # PLUGIN_TEST_METADATA: ${{ needs.plugin_test.outputs.metadata }}
-          CONGIG: >
-            {
+          CONFIG: '{
               "base": "main",
               "plugin_path": "nonebot/plugins.json",
               "bot_path": "nonebot/bots.json",
               "adapter_path": "nonebot/adapters.json",
               "registry_repository": "bigorangeqwq/action-test"
-            }
+            }'
           APP_ID: ${{ secrets.APP_ID }}
           PRIVATE_KEY: ${{ secrets.APP_KEY }}
           PRE_COMMIT_HOME: /github/workspace/.cache/.pre-commit
