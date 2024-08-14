@@ -113,6 +113,7 @@ jobs:
         run: |
           echo "DOCKER_HOST=tcp://localhost:2375" >> $GITHUB_ENV
           curl -sSL https://github.com/BigOrangeQWQ/noneflow/blob/main/docker-compose.yml -o docker-compose.yml
+          cat docker-compose.yml
           docker compose up 
         env:
           # PLUGIN_TEST_RESULT: ${{ needs.plugin_test.outputs.result }}
