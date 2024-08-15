@@ -74,13 +74,6 @@ jobs:
   publish_bot:
     runs-on: ubuntu-latest
     name: nonebot2 publish bot
-    services:
-      docker:
-        image: docker:dind
-        options: --privileged
-        ports:
-          - 2357:2357
-
     if: |
       ${{
         !(
@@ -95,7 +88,6 @@ jobs:
           )
         )
       }}
-    # needs: plugin_test
     steps:
       - name: Print needs
         env:
@@ -110,16 +102,7 @@ jobs:
           key: noneflow-pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
       - name: NoneBot2 Publish Bot
         uses: docker://ghcr.io/bigorangeqwq/noneflow:main
-        
-        # echo "DOCKER_HOST=tcp://localhost:2375" >> $GITHUB_ENV
-        # run: |
-        #   curl -sSL https://raw.githubusercontent.com/BigOrangeQWQ/noneflow/main/docker-compose.yml -o docker-compose.yml
-        #   printenv | grep -E '^[a-zA-Z_][a-zA-Z0-9_]*=' > noneflow_env.list
-        #   docker compose up
         env:
-          # PLUGIN_TEST_RESULT: ${{ needs.plugin_test.outputs.result }}
-          # PLUGIN_TEST_OUTPUT: ${{ needs.plugin_test.outputs.output }}
-          # PLUGIN_TEST_METADATA: ${{ needs.plugin_test.outputs.metadata }}
           INPUT_CONFIG: '{
               "base": "main",
               "plugin_path": "nonebot/plugins.json",
