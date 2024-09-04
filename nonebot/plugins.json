@@ -1642,5 +1642,21 @@
       }
     ],
     "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_web_bottle",
+    "project_link": "nonebot-plugin-web-bottle",
+    "author": "BigOrangeQWQ",
+    "tags": [
+      {
+        "label": "漂流瓶",
+        "color": "#689dd0"
+      },
+      {
+        "label": "审核",
+        "color": "#e3567b"
+      }
+    ],
+    "is_official": false
   }
 ]
