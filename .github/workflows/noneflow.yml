@@ -15,62 +15,6 @@ concurrency:
   # cancel-in-progress: true
 
 jobs:
-  # reaction:
-  #   runs-on: ubuntu-latest
-  #   name: reaction
-  #   if: |
-  #     (
-  #       github.event_name == 'issue_comment' &&
-  #       github.event.action == 'created'
-  #     ) ||
-  #     (
-  #       github.event_name == 'issues' &&
-  #       github.event.action == 'opened'
-  #     )
-  #   steps:
-  #     - name: Generate token
-  #       id: generate-token
-  #       uses: tibdex/github-app-token@v2
-  #       with:
-  #         app_id: ${{ secrets.APP_ID }}
-  #         private_key: ${{ secrets.APP_KEY }}
-
-  #     - name: Reaction on issue
-  #       if: github.event_name == 'issues'
-  #       run: |
-  #         gh api --method POST /repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/reactions -f "content=rocket"
-  #       env:
-  #         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-
-  #     - name: Reaction on issue comment
-  #       if: github.event_name == 'issue_comment'
-  #       run: |
-  #         gh api --method POST /repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions -f "content=rocket"
-  #       env:
-  #         GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-  # plugin_test:
-  #   name: nonebot2 plugin test
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       python-version: ["3.10", "3.11"]
-  #   if: ${{ !(github.event_name == 'issue_comment' && github.event.issue.pull_request) }}
-  #   outputs:
-  #     result: ${{ steps.plugin-test.outputs.RESULT }}
-  #     output: ${{ steps.plugin-test.outputs.OUTPUT }}
-  #     metadata: ${{ steps.plugin-test.outputs.METADATA }}
-  #   steps:
-  #     - name: Install poetry
-  #       if: ${{ !startsWith(github.event_name, 'pull_request') }}
-  #       run: pipx install poetry
-  #     - uses: actions/setup-python@v4
-  #       with:
-  #         python-version: ${{ matrix.python-version }}
-  #     - name: Test Plugin
-  #       id: plugin-test
-  #       run: |
-  #         curl -sSL https://raw.githubusercontent.com/nonebot/nonebot2-publish-bot/main/src/utils/plugin_test.py -o plugin_test.py
-  #         python plugin_test.py
   publish_bot:
     runs-on: ubuntu-latest
     name: nonebot2 publish bot
