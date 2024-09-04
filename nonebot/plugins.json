@@ -1607,5 +1607,40 @@
     "is_official": false,
     "type": "application",
     "supported_adapters": ["nonebot.adapters.onebot.v11"]
+  },
+  {
+    "module_name": "nonebot_plugin_yoyogame",
+    "project_link": "nonebot-plugin-yoyogame",
+    "author": "he0119",
+    "tags": [],
+    "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_lxns_maimai",
+    "project_link": "nonebot-plugin-lxns-maimai",
+    "author": "BigOrangeQWQ",
+    "tags": [
+      {
+        "label": "maimai",
+        "color": "#228be6"
+      }
+    ],
+    "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_yoyogame",
+    "project_link": "nonebot-plugin-yoyogame",
+    "author": "BigOrangeQWQ",
+    "tags": [
+      {
+        "label": "game",
+        "color": "#ea5252"
+      },
+      {
+        "label": "多人游戏",
+        "color": "#73fe1f"
+      }
+    ],
+    "is_official": false
   }
 ]
