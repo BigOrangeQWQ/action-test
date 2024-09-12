@@ -77,3 +77,4 @@ jobs:
             ${{ github.workspace }}/plugin_test/bots.json
             ${{ github.workspace }}/plugin_test/drivers.json
             ${{ github.workspace }}/plugin_test/plugins.json
+            ${{ github.workspace }}/plugin_test/plugin_configs.json
