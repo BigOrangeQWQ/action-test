@@ -1,4 +1,4 @@
-name: 下架商店中的包
+name: 下架商店中发布的包
 title: "Remove package: {name}"
 description: 移除发布到商店中的包，需要包的发布者提出该请求
 labels: ["remove"]
@@ -6,7 +6,7 @@ body:
   - type: dropdown
     id: action
     attributes:
-      label: 你想移除何种类型的包？
+      label: 下架的类型
       options:
         - Plugin
         - Adapter
@@ -26,8 +26,8 @@ body:
   - type: input
     id: module
     attributes:
-      label: 插件 import 包名
-      description: 插件 import 包名
+      label: Import 包名
+      description: import 包名
       placeholder: e.g. nonebot_plugin_xxx
     validations:
       required: true
