@@ -22,6 +22,11 @@ concurrency:
   group: "store-test"
   cancel-in-progress: false
 
+env:
+  action-repo: "bigorangeqwq/action-test"
+  registry-repo: "bigorangeqwq/registry"
+  noneflow-repo: "bigorangeqwq/noneflow"
+
 jobs:
   store_test:
     runs-on: ubuntu-latest
@@ -30,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: bigorangeqwq/noneflow
+          repository: ${{ env.noneflow-repo }}
           fetch-depth: 0
 
       - name: Install poetry
@@ -44,28 +49,31 @@ jobs:
         run: |
           poetry install
           mkdir -p plugin_test/store
-          curl -sSL https://raw.githubusercontent.com/nonebot/registry/results/results.json -o plugin_test/store/previous_results.json
-          curl -sSL https://raw.githubusercontent.com/nonebot/registry/results/plugins.json -o plugin_test/store/previous_plugins.json
-          curl -sSL https://raw.githubusercontent.com/he0119/action-test/master/nonebot/adapters.json -o plugin_test/store/adapters.json
-          curl -sSL https://raw.githubusercontent.com/he0119/action-test/master/nonebot/bots.json -o plugin_test/store/bots.json
           curl -sSL https://raw.githubusercontent.com/nonebot/nonebot2/master/website/static/drivers.json -o plugin_test/store/drivers.json
-          curl -sSL https://raw.githubusercontent.com/he0119/action-test/master/nonebot/plugins.json -o plugin_test/store/plugins.json
+
+          curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/results.json -o plugin_test/store/previous_results.json
+          curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/plugins.json -o plugin_test/store/previous_plugins.json
+          curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/plugin_configs.json -o plugin_test/store/plugin_configs.json
+      
+          curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/adapters.json -o plugin_test/store/adapters.json
+          curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/bots.json -o plugin_test/store/bots.json
+          curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/plugins.json -o plugin_test/store/plugins.json
 
       - name: Test plugin
         if: ${{ !contains(fromJSON('["Bot", "Adapter", "Plugin"]'), github.event.client_payload.type) }}
         run: |
-          poetry run python -m src.utils.store_test --offset ${{ github.event.inputs.offset || 0 }} --limit ${{ github.event.inputs.limit || 50 }} ${{ github.event.inputs.args }}
+          poetry run python -m src.providers.store_test --offset ${{ github.event.inputs.offset || 0 }} --limit ${{ github.event.inputs.limit || 50 }} ${{ github.event.inputs.args }}
 
       - name: Update registry(Plugin)
         if: github.event.client_payload.type == 'Plugin'
-        run: poetry run python -m src.utils.store_test -k '${{ github.event.client_payload.key }}' -f
+        run: poetry run python -m src.providers.store_test -k '${{ github.event.client_payload.key }}' -f
         env:
           PLUGIN_CONFIG: ${{ github.event.client_payload.config }}
           PLUGIN_DATA: ${{ github.event.client_payload.data }}
 
       - name: Update registry(Bot, Apdater)
         if: ${{ contains(fromJSON('["Bot", "Adapter"]'), github.event.client_payload.type) }}
-        run: poetry run python -m src.utils.store_test -l 0
+        run: poetry run python -m src.providers.store_test -l 0
 
       - name: Upload results
         uses: actions/upload-artifact@v3
