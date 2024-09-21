@@ -50,11 +50,9 @@ jobs:
           poetry install
           mkdir -p plugin_test/store
           curl -sSL https://raw.githubusercontent.com/nonebot/nonebot2/master/website/static/drivers.json -o plugin_test/store/drivers.json
-
           curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/results.json -o plugin_test/store/previous_results.json
           curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/plugins.json -o plugin_test/store/previous_plugins.json
           curl -sSL https://raw.githubusercontent.com/${{ env.registry-repo }}/results/plugin_configs.json -o plugin_test/store/plugin_configs.json
-      
           curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/adapters.json -o plugin_test/store/adapters.json
           curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/bots.json -o plugin_test/store/bots.json
           curl -sSL https://raw.githubusercontent.com/${{ env.action-repo }}/master/nonebot/plugins.json -o plugin_test/store/plugins.json

@@ -1,23 +1,13 @@
-name: 下架商店中发布的插件
-title: "Remove plugin: {name}"
-description: 由插件作者提交，用于下架商店中发布的插件
+name: 下架商店中发布的包
+title: "Remove package: {name}"
+description: 由包作者提交，用于下架商店中发布的包
 labels: ["remove"]
 body:
   - type: input
-    id: pypi
+    id: homepage
     attributes:
-      label: PyPI 项目名
-      description: PyPI 项目名
-      placeholder: e.g. nonebot-plugin-xxx
+      label: 项目主页
+      description: 项目主页
+      placeholder: e.g. https://github.com/nonebot/nonebot-plugin-xxx
     validations:
       required: true
-
-  - type: input
-    id: module
-    attributes:
-      label: 插件 import 包名
-      description: 插件 import 包名
-      placeholder: e.g. nonebot_plugin_xxx
-    validations:
-      required: true
-
