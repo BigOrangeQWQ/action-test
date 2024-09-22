@@ -920,7 +920,7 @@
     "project_link": "nonebot-plugin-datastore",
     "name": "NoneBot 数据存储",
     "desc": "提供简单的插件数据封装与数据库访问",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/he0119/nonebot-plugin-datastore",
     "tags": [],
     "is_official": false
@@ -983,7 +983,7 @@
     "project_link": "nonebot-plugin-wordcloud",
     "name": "词云",
     "desc": "根据群内聊天记录生成词云",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/he0119/nonebot-plugin-wordcloud",
     "tags": [],
     "is_official": false
@@ -1530,7 +1530,7 @@
     "project_link": "nonebot_plugin_l4d2_server",
     "name": "求生之路小助手",
     "desc": "群内对有关求生之路的查询和操作",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/Agnes4m/nonebot_plugin_l4d2_server",
     "tags": [],
     "is_official": false,
@@ -1544,7 +1544,7 @@
     "project_link": "nonebot-plugin-anime-trace",
     "name": "识别动漫gal角色",
     "desc": "通过ai.animedb.cn的api识别动漫、galgame角色",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/tomorinao-www/nonebot-plugin-anime-trace",
     "tags": [
       {
@@ -1563,7 +1563,7 @@
     "project_link": "nonebot-plugin-arxivRSS",
     "name": "arxiv订阅",
     "desc": "订阅arxiv指定领域每天更新的论文",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/LuckySJTU/nonebot-plugin-arxivRSS/",
     "tags": [
       {
@@ -1590,7 +1590,7 @@
     "project_link": "nonebot-plugin-qrcode2",
     "name": "二维码",
     "desc": "通过pyzbar解析二维码",
-    "author": "he0119",
+    "author": "BigOrangeQWQ",
     "homepage": "https://github.com/tomorinao-www/nonebot-plugin-qrcode2",
     "tags": [
       {
