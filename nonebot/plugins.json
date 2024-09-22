@@ -1516,18 +1516,6 @@
     "is_official": false
   },
   {
-    "module_name": "nonebot_plugin_l4d2_server",
-    "project_link": "nonebot_plugin_l4d2_server",
-    "name": "求生之路小助手",
-    "desc": "群内对有关求生之路的查询和操作",
-    "author": "BigOrangeQWQ",
-    "homepage": "https://github.com/Agnes4m/nonebot_plugin_l4d2_server",
-    "tags": [],
-    "is_official": false,
-    "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
-  },
-  {
     "module_name": "nonebot_plugin_anime_trace",
     "project_link": "nonebot-plugin-anime-trace",
     "name": "识别动漫gal角色",
@@ -1565,35 +1553,6 @@
         "color": "#f541dc"
       }
     ],
-    "is_official": false,
-    "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
-  },
-  {
-    "module_name": "nonebot_plugin_qrcode2",
-    "project_link": "nonebot-plugin-qrcode2",
-    "name": "二维码",
-    "desc": "通过pyzbar解析二维码",
-    "author": "BigOrangeQWQ",
-    "homepage": "https://github.com/tomorinao-www/nonebot-plugin-qrcode2",
-    "tags": [
-      {
-        "label": "qrcode",
-        "color": "#f541dc"
-      }
-    ],
-    "is_official": false,
-    "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
-  },
-  {
-    "module_name": "nonebot_plugin_simple_httpcat",
-    "project_link": "nonebot-plugin-simple-httpcat",
-    "name": "httpcat-状态猫😺",
-    "desc": "简单粗暴的httpcat插件，参考了zjkwdy大佬的weather_lite插件",
-    "author": "BigOrangeQWQ",
-    "homepage": "https://github.com/XTxiaoting14332/nonebot-plugin-simple-httpcat",
-    "tags": [],
     "is_official": false,
     "type": "application",
     "supported_adapters": ["nonebot.adapters.onebot.v11"]
