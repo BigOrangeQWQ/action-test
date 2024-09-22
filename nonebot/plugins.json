@@ -1563,5 +1563,12 @@
     "is_official": false,
     "type": "application",
     "supported_adapters": ["nonebot.adapters.onebot.v11"]
+  },
+  {
+    "module_name": "nonebot_plugin_acm_reminder",
+    "project_link": "nonebot_plugin_acm_reminder",
+    "author": "BigOrangeQWQ",
+    "tags": [],
+    "is_official": false
   }
 ]
