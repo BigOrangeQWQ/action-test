@@ -916,6 +916,16 @@
     "is_official": false
   },
   {
+    "module_name": "nonebot_plugin_datastore",
+    "project_link": "nonebot-plugin-datastore",
+    "name": "NoneBot 数据存储",
+    "desc": "提供简单的插件数据封装与数据库访问",
+    "author": "BigOrangeQWQ",
+    "homepage": "https://github.com/he0119/nonebot-plugin-datastore",
+    "tags": [],
+    "is_official": false
+  },
+  {
     "module_name": "nonebot_plugin_gocqhttp",
     "project_link": "nonebot-plugin-gocqhttp",
     "name": "NoneBot的go-cqhttp启动器",
@@ -966,6 +976,16 @@
         "color": "#000000"
       }
     ],
+    "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_wordcloud",
+    "project_link": "nonebot-plugin-wordcloud",
+    "name": "词云",
+    "desc": "根据群内聊天记录生成词云",
+    "author": "BigOrangeQWQ",
+    "homepage": "https://github.com/he0119/nonebot-plugin-wordcloud",
+    "tags": [],
     "is_official": false
   },
   {
@@ -1506,6 +1526,20 @@
     "is_official": false
   },
   {
+    "module_name": "nonebot_plugin_l4d2_server",
+    "project_link": "nonebot_plugin_l4d2_server",
+    "name": "求生之路小助手",
+    "desc": "群内对有关求生之路的查询和操作",
+    "author": "BigOrangeQWQ",
+    "homepage": "https://github.com/Agnes4m/nonebot_plugin_l4d2_server",
+    "tags": [],
+    "is_official": false,
+    "type": "application",
+    "supported_adapters": [
+      "nonebot.adapters.onebot.v11"
+    ]
+  },
+  {
     "module_name": "nonebot_plugin_anime_trace",
     "project_link": "nonebot-plugin-anime-trace",
     "name": "识别动漫gal角色",
@@ -1520,7 +1554,9 @@
     ],
     "is_official": false,
     "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
+    "supported_adapters": [
+      "nonebot.adapters.onebot.v11"
+    ]
   },
   {
     "module_name": "nonebot_plugin_arxivRSS",
@@ -1545,7 +1581,9 @@
     ],
     "is_official": false,
     "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
+    "supported_adapters": [
+      "nonebot.adapters.onebot.v11"
+    ]
   },
   {
     "module_name": "nonebot_plugin_qrcode2",
@@ -1562,6 +1600,22 @@
     ],
     "is_official": false,
     "type": "application",
-    "supported_adapters": ["nonebot.adapters.onebot.v11"]
+    "supported_adapters": [
+      "nonebot.adapters.onebot.v11"
+    ]
+  },
+  {
+    "module_name": "nonebot_plugin_simple_httpcat",
+    "project_link": "nonebot-plugin-simple-httpcat",
+    "name": "httpcat-状态猫😺",
+    "desc": "简单粗暴的httpcat插件，参考了zjkwdy大佬的weather_lite插件",
+    "author": "BigOrangeQWQ",
+    "homepage": "https://github.com/XTxiaoting14332/nonebot-plugin-simple-httpcat",
+    "tags": [],
+    "is_official": false,
+    "type": "application",
+    "supported_adapters": [
+      "nonebot.adapters.onebot.v11"
+    ]
   }
 ]
