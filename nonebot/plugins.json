@@ -1521,5 +1521,17 @@
     "is_official": false,
     "type": "application",
     "supported_adapters": ["nonebot.adapters.onebot.v11"]
+  },
+  {
+    "module_name": "nonebot_plugin_calc_game",
+    "project_link": "nonebot-plugin-calc-game",
+    "author": "BigOrangeQWQ",
+    "tags": [
+      {
+        "label": "game",
+        "color": "#ea5252"
+      }
+    ],
+    "is_official": false
   }
 ]
