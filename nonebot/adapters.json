@@ -18,5 +18,21 @@
     "homepage": "https://github.com/nonebot/adapter-ding",
     "tags": [],
     "is_official": true
+  },
+  {
+    "module_name": "nonebot.adapters.opqbot",
+    "project_link": "nonebot-adapter-opqbot",
+    "name": "OPQBot",
+    "desc": "OPQBot 适配器",
+    "author": "BigOrangeQWQ",
+    "author_id": 63897047,
+    "homepage": "https://github.com/opq-osc/nonebot-adapter-opqbot",
+    "tags": [
+      {
+        "label": "QQNT",
+        "color": "#35a7c9"
+      }
+    ],
+    "is_official": false
   }
 ]
