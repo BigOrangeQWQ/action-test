@@ -1533,5 +1533,17 @@
       }
     ],
     "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_beatsaberscore",
+    "project_link": "nonebot_plugin_beatsaberscore",
+    "author": "BigOrangeQWQ",
+    "tags": [
+      {
+        "label": "Beat Saber",
+        "color": "#456df1"
+      }
+    ],
+    "is_official": false
   }
 ]
