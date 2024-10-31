@@ -1533,5 +1533,12 @@
       }
     ],
     "is_official": false
+  },
+  {
+    "module_name": "nonebot_plugin_acm_reminder",
+    "project_link": "nonebot_plugin_acm_reminder",
+    "author": "BigOrangeQWQ",
+    "tags": [],
+    "is_official": false
   }
 ]
